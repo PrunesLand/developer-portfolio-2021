@@ -1,31 +1,20 @@
+import { Typography } from '@material-ui/core'
 import React from 'react'
+import { introStyle } from '../Styles/PageStyles'
 
-const Profile = () => {
-    return (
-        <div>
-
-        </div>
-    )
-}
-
-const Content = () => {
-    return (
-        <div></div>
-    )
-}
 
 export default function Intro() {
     return (
         <>
             <section>
-                <div>
-                    <Profile>
-                        <h3>Image position</h3>
-                    </Profile>
-                    <Content>
-                        <h2>Job Title</h2>
-                        <p>Description of yourself and brief introduction.</p>
-                    </Content>
+                <div className={introStyle.hero}>
+                    <div>
+                        <Typography>Image position</Typography>
+                    </div>
+                    <div>
+                        <Typography variant='h3'>Job Title</Typography>
+                        <Typography variant='h5'>Description of yourself and brief introduction.</Typography>
+                    </div>
                 </div>
             </section>
         </>
