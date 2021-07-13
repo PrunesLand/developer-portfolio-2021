@@ -1,6 +1,4 @@
 import { makeStyles } from "@material-ui/core";
-// import { purple } from "@material-ui/core/colors";
-// import { createTheme } from '@material-ui/core/styles'
 
 
 
@@ -11,6 +9,19 @@ export const introStyle = makeStyles({
     }
 })
 
-// const navStyle = makeStyles({
+export const navStyle = makeStyles({
+    root: {
 
-// })
+    },
+    title: {
+        flexGrow: 1,
+        textAlign: 'center',
+
+    },
+    container: {
+
+    },
+    appbar: {
+        alignItems: 'center'
+    }
+})
