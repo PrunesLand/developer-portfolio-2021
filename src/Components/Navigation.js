@@ -1,6 +1,27 @@
 import { AppBar, Toolbar, Typography } from '@material-ui/core'
 import React from 'react'
-import { navStyle } from '../Styles/PageStyles'
+import { makeStyles } from "@material-ui/core";
+
+const navStyle = makeStyles((theme) => {
+    return {
+        root: {
+
+        },
+        title: {
+            flexGrow: 1,
+            textAlign: 'center',
+            color: theme.palette.primary.main
+
+        },
+        container: {
+
+        },
+        appbar: {
+            alignItems: 'center',
+            color: theme.palette.primary.dark
+        }
+    }
+})
 
 export default function Navigation() {
 
@@ -10,12 +31,12 @@ export default function Navigation() {
         <>
             <AppBar
                 position='static'
+                className={classes.appbar}
             >
                 <Toolbar>
 
                     <Typography
                         className={classes.title}
-                        color='secondary'
                         variant='h4'
                     >
                         Pranaya Anargya

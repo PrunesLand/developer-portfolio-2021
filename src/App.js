@@ -1,14 +1,15 @@
 import { createTheme, ThemeProvider } from "@material-ui/core";
-import { purple } from "@material-ui/core/colors";
 import Navigation from "./Components/Navigation";
 // import Intro from "./Pages/Intro";
 
 const theme = createTheme({
   palette: {
     primary: {
-      main: '#fefefe'
+      main: '#bdbdbd',
+      light: '#efefef',
+      dark: '#8d8d8d'
     },
-    secondary: purple
+
   },
   typography: {
     useNextVariants: true,

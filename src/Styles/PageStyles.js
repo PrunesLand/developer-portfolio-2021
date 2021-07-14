@@ -9,19 +9,3 @@ export const introStyle = makeStyles({
     }
 })
 
-export const navStyle = makeStyles({
-    root: {
-
-    },
-    title: {
-        flexGrow: 1,
-        textAlign: 'center',
-
-    },
-    container: {
-
-    },
-    appbar: {
-        alignItems: 'center'
-    }
-})
