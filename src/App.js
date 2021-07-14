@@ -1,6 +1,10 @@
 import { createTheme, ThemeProvider } from "@material-ui/core";
 import Navigation from "./Components/Navigation";
 import Intro from "./Pages/Intro";
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import Story from './Pages/Story'
+import Experience from './Pages/Experience'
+import Contact from './Pages/Contact'
 
 const theme = createTheme({
   palette: {
@@ -30,9 +34,24 @@ const theme = createTheme({
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <Navigation>
-        <Intro />
-      </Navigation>
+      <Router>
+        <Navigation>
+          <Switch>
+            <Route exact path="/">
+              <Intro />
+            </Route>
+            <Route exact path="/story">
+              <Story />
+            </Route>
+            <Route exact path="/experience">
+              <Experience />
+            </Route>
+            <Route exact path="/contact">
+              <Contact />
+            </Route>
+          </Switch>
+        </Navigation>
+      </Router>
     </ThemeProvider>
   );
 }
