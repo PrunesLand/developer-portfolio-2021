@@ -1,10 +1,35 @@
 import { makeStyles, Typography } from '@material-ui/core'
 import React from 'react'
+import Avatar from '@material-ui/core/Avatar';
 
-const introStyle = makeStyles({
-    root: {
-        flex: 1,
-        overflow: 'none'
+const introStyle = makeStyles((theme) => {
+    return {
+        root: {
+            flex: 1,
+            overflow: 'none',
+
+
+
+        },
+        section: {
+
+            height: '100%',
+            marginTop: theme.spacing(5),
+
+        },
+        hero: {
+            display: 'flex',
+            width: '80vh',
+            margin: 'auto',
+
+        },
+        profile: {
+            width: theme.spacing(15),
+            height: theme.spacing(15)
+        },
+        container: {
+            marginLeft: theme.spacing(3)
+        }
     }
 })
 
@@ -12,18 +37,39 @@ export default function Intro() {
 
     const classes = introStyle()
 
+    const Profile = () => {
+        return (
+
+            <Avatar
+                alt='Pranaya Anargya'
+                src="/mario-av.png"
+                className={classes.profile}
+            />
+
+        )
+    }
+
     return (
         <div
             className={classes.root}
         >
-            <section>
-                <div >
-                    <div>
-                        <Typography>Image position</Typography>
+            <section
+                className={classes.section}
+            >
+                <div
+                    className={classes.hero}
+                >
+                    <div
+                        className={classes.profile}
+                    >
+                        <Profile />
                     </div>
-                    <div>
-                        <Typography variant='h3'>Job Title</Typography>
-                        <Typography variant='h5'>Description of yourself and brief introduction.</Typography>
+                    <div
+                        className={classes.container}
+                    >
+                        <Typography variant='h3'>React Developer</Typography>
+                        <Typography variant='h5'>Hi i'm Pranaya,</Typography>
+                        <Typography variant='body1'>I'm a enthusiastic developer with an interest in ReactJS. </Typography>
                     </div>
                 </div>
             </section>

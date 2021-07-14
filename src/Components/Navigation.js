@@ -14,22 +14,22 @@ const navStyle = makeStyles((theme) => {
         title: {
             flexGrow: 1,
             textAlign: 'center',
-            color: theme.palette.secondary.main
+            color: theme.palette.secondary.dark
 
         },
         appbar: {
             flexGrow: 1,
-            background: theme.palette.primary.light
+            background: theme.palette.primary.dark
         },
         infoIcon: {
             fontSize: '1.5rem',
-            cursor: 'pointer'
+            cursor: 'pointer',
+            color: theme.palette.secondary.dark
         },
         modal: {
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-
         },
         paper: {
             backgroundColor: theme.palette.background.paper,
@@ -38,7 +38,7 @@ const navStyle = makeStyles((theme) => {
             padding: theme.spacing(2, 4, 3),
         },
         page: {
-            background: theme.palette.primary.dark,
+
             padding: theme.spacing(3),
         },
         toolBar: theme.mixins.toolbar,
