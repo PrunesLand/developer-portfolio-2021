@@ -29,6 +29,7 @@ const navStyle = makeStyles((theme) => {
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
+
         },
         paper: {
             backgroundColor: theme.palette.background.paper,
@@ -78,8 +79,14 @@ export default function Navigation() {
                 >
                     <Fade in={open}>
                         <div className={classes.paper}>
-                            <h2 id="transition-modal-title">Transition modal</h2>
-                            <p id="transition-modal-description">react-transition-group animates me.</p>
+                            <h3>Details about this website</h3>
+                            <p>This website was made by Prunesland to showcase his skills in React development.</p>
+                            <p>The tools used in the makings of this website are:</p>
+                            <ul>
+                                <li>React library</li>
+                                <li>Material UI</li>
+                                <li>Netlify</li>
+                            </ul>
                         </div>
                     </Fade>
                 </Modal>
