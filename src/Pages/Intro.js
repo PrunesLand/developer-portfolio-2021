@@ -1,13 +1,23 @@
-import { Typography } from '@material-ui/core'
+import { makeStyles, Typography } from '@material-ui/core'
 import React from 'react'
-import { introStyle } from '../Styles/PageStyles'
 
+const introStyle = makeStyles({
+    root: {
+        flex: 1,
+        overflow: 'none'
+    }
+})
 
 export default function Intro() {
+
+    const classes = introStyle()
+
     return (
-        <>
+        <div
+            className={classes.root}
+        >
             <section>
-                <div className={introStyle.hero}>
+                <div >
                     <div>
                         <Typography>Image position</Typography>
                     </div>
@@ -17,6 +27,6 @@ export default function Intro() {
                     </div>
                 </div>
             </section>
-        </>
+        </div>
     )
 }

@@ -1,6 +1,6 @@
 import { createTheme, ThemeProvider } from "@material-ui/core";
 import Navigation from "./Components/Navigation";
-// import Intro from "./Pages/Intro";
+import Intro from "./Pages/Intro";
 
 const theme = createTheme({
   palette: {
@@ -30,7 +30,9 @@ const theme = createTheme({
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <Navigation />
+      <Navigation>
+        <Intro />
+      </Navigation>
     </ThemeProvider>
   );
 }

@@ -9,7 +9,7 @@ import Fade from '@material-ui/core/Fade';
 const navStyle = makeStyles((theme) => {
     return {
         root: {
-            flex: 1
+            flex: 1,
         },
         title: {
             flexGrow: 1,
@@ -37,10 +37,15 @@ const navStyle = makeStyles((theme) => {
             boxShadow: theme.shadows[5],
             padding: theme.spacing(2, 4, 3),
         },
+        page: {
+            background: theme.palette.primary.dark,
+            padding: theme.spacing(3),
+        },
+        toolBar: theme.mixins.toolbar,
     }
 })
 
-export default function Navigation() {
+export default function Navigation({ children }) {
 
     const classes = navStyle() // to use the styles of makestyle() from material-ui
 
@@ -56,7 +61,9 @@ export default function Navigation() {
 
     const IconContainer = () => {
         return (
-            <div>
+            <div
+
+            >
                 <div
                     onClick={() => {
                         handleOpen()
@@ -114,6 +121,10 @@ export default function Navigation() {
                     <IconContainer />
                 </Toolbar>
             </AppBar>
+            <div className={classes.page}>
+                <div className={classes.toolBar}></div>
+                {children}
+            </div>
         </div>
     )
 }
