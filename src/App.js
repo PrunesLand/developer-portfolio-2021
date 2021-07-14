@@ -1,13 +1,21 @@
 import { createTheme, ThemeProvider } from "@material-ui/core";
-import { purple } from "@material-ui/core/colors";
-import Intro from "./Pages/Intro";
+import Navigation from "./Components/Navigation";
+// import Intro from "./Pages/Intro";
 
 const theme = createTheme({
   palette: {
     primary: {
-      main: '#fefefe'
+      main: '#bdbdbd',
+      light: '#efefef',
+      dark: '#8d8d8d'
     },
-    secondary: purple
+    secondary: {
+      main: '#455a64',
+      light: '#718792',
+      dark: '#1c313a'
+
+    }
+
   },
   typography: {
     useNextVariants: true,
@@ -22,7 +30,7 @@ const theme = createTheme({
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <Intro />
+      <Navigation />
     </ThemeProvider>
   );
 }
