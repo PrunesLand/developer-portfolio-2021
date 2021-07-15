@@ -5,17 +5,11 @@ import Avatar from '@material-ui/core/Avatar';
 const introStyle = makeStyles((theme) => {
     return {
         root: {
-            flex: 1,
             overflow: 'none',
-
-
-
         },
         section: {
-
             height: '100%',
             marginTop: theme.spacing(5),
-
         },
         hero: {
             display: 'flex',
