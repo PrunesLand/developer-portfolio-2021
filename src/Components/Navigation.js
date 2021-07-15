@@ -5,11 +5,13 @@ import { BsInfoCircle } from 'react-icons/bs';
 import Modal from '@material-ui/core/Modal';
 import Backdrop from '@material-ui/core/Backdrop';
 import Fade from '@material-ui/core/Fade';
+import ButtonLinks from './ButtonLinks';
 
 const navStyle = makeStyles((theme) => {
     return {
         root: {
             flex: 1,
+            height: '60vh'
         },
         title: {
             flexGrow: 1,
@@ -42,6 +44,10 @@ const navStyle = makeStyles((theme) => {
             padding: theme.spacing(3),
         },
         toolBar: theme.mixins.toolbar,
+        buttonWrapper: {
+            height: '20vh',
+
+        }
     }
 })
 
@@ -61,9 +67,7 @@ export default function Navigation({ children }) {
 
     const IconContainer = () => {
         return (
-            <div
-
-            >
+            <div>
                 <div
                     onClick={() => {
                         handleOpen()
@@ -124,6 +128,9 @@ export default function Navigation({ children }) {
             <div className={classes.page}>
                 <div className={classes.toolBar}></div>
                 {children}
+            </div>
+            <div className={classes.buttonWrapper}>
+                <ButtonLinks />
             </div>
         </div>
     )
