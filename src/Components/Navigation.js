@@ -5,7 +5,10 @@ import { BsInfoCircle } from 'react-icons/bs';
 import Modal from '@material-ui/core/Modal';
 import Backdrop from '@material-ui/core/Backdrop';
 import Fade from '@material-ui/core/Fade';
-import ButtonLinks from './ButtonLinks';
+// import ButtonLinks from './ButtonLinks';
+import Button from '@material-ui/core/Button';
+import ButtonGroup from '@material-ui/core/ButtonGroup';
+import { useHistory } from 'react-router-dom';
 
 const navStyle = makeStyles((theme) => {
     return {
@@ -47,7 +50,15 @@ const navStyle = makeStyles((theme) => {
         buttonWrapper: {
             flexGrow: 1
 
-        }
+        },
+        rootButton: {
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            '& > *': {
+                margin: theme.spacing(1),
+            },
+        },
     }
 })
 
@@ -106,6 +117,49 @@ export default function Navigation({ children }) {
         )
     }
 
+    function BasicButtonGroup() {
+        const history = useHistory()
+
+        const buttonItems = [
+            {
+                id: 1,
+                text: 'About me',
+                path: '/',
+                message: 'About me clicked'
+            },
+            {
+                id: 2,
+                text: 'My story',
+                path: '/story',
+                message: 'My story clicked'
+            },
+            {
+                id: 3,
+                text: 'Experience',
+                path: '/experience',
+                message: 'Experience clicked'
+            },
+            {
+                id: 4,
+                text: 'Contact',
+                path: '/contact',
+                message: 'Contact clicked'
+            },
+        ]
+
+        return (
+            <div className={classes.rootButton}>
+                <ButtonGroup variant="text" color="secondary" aria-label="text primary button group">
+                    {buttonItems.map(item => (
+                        <Button key={item.id} href={item.path} onClick={() => history.push(item.path)}>
+                            {item.text}
+                        </Button>
+                    ))}
+                </ButtonGroup>
+            </div >
+        );
+    }
+
     return (
         <div
             className={classes.root}
@@ -131,7 +185,7 @@ export default function Navigation({ children }) {
                 </div>
             </div>
             <div className={classes.buttonWrapper}>
-                <ButtonLinks />
+                <BasicButtonGroup />
             </div>
         </div>
     )
