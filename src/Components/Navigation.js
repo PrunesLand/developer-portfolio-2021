@@ -45,7 +45,7 @@ const navStyle = makeStyles((theme) => {
         },
         toolBar: theme.mixins.toolbar,
         buttonWrapper: {
-            height: '20vh',
+            flexGrow: 1
 
         }
     }
@@ -126,8 +126,9 @@ export default function Navigation({ children }) {
                 </Toolbar>
             </AppBar>
             <div className={classes.page}>
-                <div className={classes.toolBar}></div>
-                {children}
+                <div className={classes.toolBar}>
+                    {children}
+                </div>
             </div>
             <div className={classes.buttonWrapper}>
                 <ButtonLinks />
