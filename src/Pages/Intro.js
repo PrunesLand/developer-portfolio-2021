@@ -1,6 +1,7 @@
 import { makeStyles, Typography } from '@material-ui/core'
 import React from 'react'
 import Avatar from '@material-ui/core/Avatar';
+import { FaGithub, FaLinkedin } from 'react-icons/fa'
 
 const introStyle = makeStyles((theme) => {
     return {
@@ -64,6 +65,11 @@ export default function Intro() {
                         <Typography variant='h3'>React Developer</Typography>
                         <Typography variant='h5'>Hi i'm Pranaya,</Typography>
                         <Typography variant='body1'>I'm a enthusiastic developer with an interest in ReactJS. </Typography>
+                        <Typography>I'm experienced in various programming languages and tools used in React Development.</Typography>
+                        <div>
+                            <FaGithub />
+                            <FaLinkedin />
+                        </div>
                     </div>
                 </div>
             </section>
