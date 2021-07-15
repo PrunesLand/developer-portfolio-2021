@@ -2,6 +2,7 @@ import React from 'react';
 import Button from '@material-ui/core/Button';
 import ButtonGroup from '@material-ui/core/ButtonGroup';
 import { makeStyles } from '@material-ui/core/styles';
+import { useHistory } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -16,6 +17,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function BasicButtonGroup() {
     const classes = useStyles();
+    const history = useHistory()
 
     const buttonItems = [
         {
@@ -48,9 +50,7 @@ export default function BasicButtonGroup() {
         <div className={classes.root}>
             <ButtonGroup variant="text" color="secondary" aria-label="text primary button group">
                 {buttonItems.map(item => (
-                    <Button key={item.id} href={item.path} onClick={(e) => {
-
-                    }}>
+                    <Button key={item.id} href={item.path} onClick={() => history.push(item.path)}>
                         {item.text}
                     </Button>
                 ))}

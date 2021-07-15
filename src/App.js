@@ -40,13 +40,13 @@ function App() {
             <Route exact path="/">
               <Intro />
             </Route>
-            <Route exact path="/story">
+            <Route path="/story">
               <Story />
             </Route>
-            <Route exact path="/experience">
+            <Route path="/experience">
               <Experience />
             </Route>
-            <Route exact path="/contact">
+            <Route path="/contact">
               <Contact />
             </Route>
           </Switch>
