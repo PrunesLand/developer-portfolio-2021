@@ -5,31 +5,33 @@ import { BsInfoCircle } from 'react-icons/bs';
 import Modal from '@material-ui/core/Modal';
 import Backdrop from '@material-ui/core/Backdrop';
 import Fade from '@material-ui/core/Fade';
+import ButtonLinks from './ButtonLinks';
 
 const navStyle = makeStyles((theme) => {
     return {
         root: {
-            flex: 1
+            flex: 1,
+            height: '60vh'
         },
         title: {
             flexGrow: 1,
             textAlign: 'center',
-            color: theme.palette.secondary.main
+            color: theme.palette.secondary.dark
 
         },
         appbar: {
             flexGrow: 1,
-            background: theme.palette.primary.light
+            background: theme.palette.primary.dark
         },
         infoIcon: {
             fontSize: '1.5rem',
-            cursor: 'pointer'
+            cursor: 'pointer',
+            color: theme.palette.secondary.dark
         },
         modal: {
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-
         },
         paper: {
             backgroundColor: theme.palette.background.paper,
@@ -37,10 +39,19 @@ const navStyle = makeStyles((theme) => {
             boxShadow: theme.shadows[5],
             padding: theme.spacing(2, 4, 3),
         },
+        page: {
+
+            padding: theme.spacing(3),
+        },
+        toolBar: theme.mixins.toolbar,
+        buttonWrapper: {
+            flexGrow: 1
+
+        }
     }
 })
 
-export default function Navigation() {
+export default function Navigation({ children }) {
 
     const classes = navStyle() // to use the styles of makestyle() from material-ui
 
@@ -114,6 +125,14 @@ export default function Navigation() {
                     <IconContainer />
                 </Toolbar>
             </AppBar>
+            <div className={classes.page}>
+                <div className={classes.toolBar}>
+                    {children}
+                </div>
+            </div>
+            <div className={classes.buttonWrapper}>
+                <ButtonLinks />
+            </div>
         </div>
     )
 }
