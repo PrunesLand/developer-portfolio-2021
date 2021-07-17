@@ -4,6 +4,8 @@ import Avatar from '@material-ui/core/Avatar';
 import { FaGithub, FaLinkedin } from 'react-icons/fa'
 import { GoMail } from 'react-icons/go'
 
+
+
 const introStyle = makeStyles((theme) => {
     return {
         root: {
@@ -33,14 +35,15 @@ const introStyle = makeStyles((theme) => {
             height: theme.spacing(20)
         },
         profileContainer: {
-
+            padding: theme.spacing(2),
             margin: 'auto'
         },
         container: {
             marginLeft: theme.spacing(3),
+            marginTop: theme.spacing(3),
             padding: theme.spacing(1),
             [theme.breakpoints.up('sm')]: {
-                width: '60vh'
+                width: '70vw'
             }
         },
         icons: {
@@ -53,13 +56,18 @@ const introStyle = makeStyles((theme) => {
             width: '4rem'
         },
         github: {
-            fontSize: '2rem'
+            fontSize: '2rem',
+            cursor: 'pointer'
         },
         linkedin: {
-            fontSize: '2rem'
+            fontSize: '2rem',
+            color: '#0077af',
+            cursor: 'pointer'
         },
         mail: {
-            fontSize: '2.2rem'
+            fontSize: '2.2rem',
+            color: '#ea4335',
+            cursor: 'pointer'
         },
     }
 })
@@ -83,17 +91,17 @@ export default function Intro() {
     const contactIcons = [
         {
             id: 1,
-            icon: <FaGithub className={classes.github} />,
+            icon: <FaGithub className={classes.github} onClick={() => window.open('https://github.com/PrunesLand')} />,
 
         },
         {
             id: 2,
-            icon: <FaLinkedin className={classes.linkedin} />,
+            icon: <FaLinkedin className={classes.linkedin} onClick={() => window.open('https://www.linkedin.com/in/pranaya-anargya-22b585195/')} />,
 
         },
         {
             id: 3,
-            icon: <GoMail className={classes.mail} />,
+            icon: <GoMail className={classes.mail} onClick={() => navigator.clipboard.writeText('Success!')} />,
 
         },
 
