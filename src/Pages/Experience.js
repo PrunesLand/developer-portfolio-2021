@@ -101,7 +101,7 @@ const Experience = () => {
                 >
                     {icons.map(item => (
                         <Paper
-                            key={item.key}
+                            key={item.id}
                             className={classes.paper}
                         >
                             {item.icon}

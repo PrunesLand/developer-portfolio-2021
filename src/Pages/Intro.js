@@ -15,20 +15,38 @@ const introStyle = makeStyles((theme) => {
         },
         hero: {
             display: 'flex',
-            width: '80vh',
             margin: 'auto',
+            [theme.breakpoints.down('sm')]: {
+                flexDirection: 'column',
+            },
+            [theme.breakpoints.up('sm')]: {
+                flexDirection: 'row',
+                width: '60vw'
+            },
+            [theme.breakpoints.up('lg')]: {
+                width: '40vw'
+            }
 
         },
         profile: {
-            width: theme.spacing(15),
-            height: theme.spacing(15)
+            width: theme.spacing(20),
+            height: theme.spacing(20)
+        },
+        profileContainer: {
+
+            margin: 'auto'
         },
         container: {
-            marginLeft: theme.spacing(3)
+            marginLeft: theme.spacing(3),
+            padding: theme.spacing(1),
+            [theme.breakpoints.up('sm')]: {
+                width: '60vh'
+            }
         },
         icons: {
             display: 'flex',
             flexDirection: 'row',
+            padding: theme.spacing(2)
 
         },
         iconItem: {
@@ -42,7 +60,7 @@ const introStyle = makeStyles((theme) => {
         },
         mail: {
             fontSize: '2.2rem'
-        }
+        },
     }
 })
 
@@ -92,16 +110,16 @@ export default function Intro() {
                     className={classes.hero}
                 >
                     <div
-                        className={classes.profile}
+                        className={classes.profileContainer}
                     >
                         <Profile />
                     </div>
                     <div
                         className={classes.container}
                     >
-                        <Typography variant='h3'>React Developer</Typography>
-                        <Typography variant='h5'>Hi i'm Pranaya,</Typography>
-                        <Typography variant='body1'>I'm a enthusiastic developer with an interest in ReactJS. </Typography>
+                        <Typography variant='h4'>React Developer</Typography>
+                        <Typography variant='h6'>Hi, I'm Pranaya.</Typography>
+                        <Typography variant='subtitle2'>I'm a enthusiastic developer with an interest in ReactJS. </Typography>
                         <Typography>I'm experienced in various programming languages and tools used in React Development.</Typography>
                         <div className={classes.icons}>
                             {contactIcons.map(item => (

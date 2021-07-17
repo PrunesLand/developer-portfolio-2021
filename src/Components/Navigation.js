@@ -14,7 +14,7 @@ const navStyle = makeStyles((theme) => {
     return {
         root: {
             flex: 1,
-            height: '60vh'
+
         },
         title: {
             flexGrow: 1,
@@ -43,8 +43,6 @@ const navStyle = makeStyles((theme) => {
             padding: theme.spacing(2, 4, 3),
         },
         page: {
-
-            padding: theme.spacing(3),
         },
         toolBar: theme.mixins.toolbar,
         buttonWrapper: {
