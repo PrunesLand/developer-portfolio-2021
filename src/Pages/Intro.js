@@ -2,9 +2,7 @@ import { makeStyles, Typography } from '@material-ui/core'
 import React from 'react'
 import Avatar from '@material-ui/core/Avatar';
 import { FaGithub, FaLinkedin } from 'react-icons/fa'
-import { GoMail } from 'react-icons/go'
-
-
+import MailPopover from '../Components/MailPopover'
 
 const introStyle = makeStyles((theme) => {
     return {
@@ -64,11 +62,6 @@ const introStyle = makeStyles((theme) => {
             color: '#0077af',
             cursor: 'pointer'
         },
-        mail: {
-            fontSize: '2.2rem',
-            color: '#ea4335',
-            cursor: 'pointer'
-        },
     }
 })
 
@@ -101,7 +94,7 @@ export default function Intro() {
         },
         {
             id: 3,
-            icon: <GoMail className={classes.mail} onClick={() => navigator.clipboard.writeText('Success!')} />,
+            icon: <MailPopover />,
 
         },
 
