@@ -23,8 +23,12 @@ const navStyle = makeStyles((theme) => {
         title: {
             flexGrow: 1,
             textAlign: 'center',
-            color: theme.palette.secondary.dark
-
+            color: theme.palette.secondary.dark,
+            fontSize: theme.typography.h6.fontSize,
+            [theme.breakpoints.up('sm')]: {
+                fontSize: theme.typography.h4.fontSize
+            },
+            marginLeft: theme.spacing(4)
         },
         appbar: {
             flexGrow: 1,
@@ -251,7 +255,6 @@ export default function Navigation({ children }) {
 
                     <Typography
                         className={classes.title}
-                        variant='h4'
                     >
                         Pranaya Anargya
 
