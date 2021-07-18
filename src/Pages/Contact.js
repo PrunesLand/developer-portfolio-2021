@@ -2,13 +2,22 @@ import { Typography } from '@material-ui/core'
 import React from 'react'
 import { makeStyles } from "@material-ui/core";
 
-const contactPage = makeStyles({
-    root: {
-        flexGrow: 1
-    },
-    container: {
-        width: '90vh',
-        margin: 'auto'
+const contactPage = makeStyles((theme) => {
+    return {
+        root: {
+            flexGrow: 1
+        },
+        container: {
+            width: '90vw',
+            margin: 'auto'
+        },
+        title: {
+            fontSize: theme.typography.h5.fontSize,
+            padding: theme.spacing(2),
+            [theme.breakpoints.up('sm')]: {
+                fontSize: theme.typography.h4.fontSize
+            }
+        }
     }
 })
 
@@ -23,7 +32,7 @@ const Contact = () => {
             <section
                 className={classes.container}
             >
-                <Typography>How you can reach me...</Typography>
+                <Typography className={classes.title}>How you can reach me...</Typography>
                 <div>
                     <Typography>I'm an active Github user. View more of my works at <a href="https://github.com/PrunesLand/developer-portfolio-2021">Github</a> </Typography>
                 </div>
