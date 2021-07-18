@@ -5,16 +5,20 @@ import { BsInfoCircle } from 'react-icons/bs';
 import Modal from '@material-ui/core/Modal';
 import Backdrop from '@material-ui/core/Backdrop';
 import Fade from '@material-ui/core/Fade';
-// import ButtonLinks from './ButtonLinks';
 import Button from '@material-ui/core/Button';
 import ButtonGroup from '@material-ui/core/ButtonGroup';
 import { useHistory } from 'react-router-dom';
+import Drawer from '@material-ui/core/Drawer';
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemText from '@material-ui/core/ListItemText';
+import { BiMenu } from 'react-icons/bi'
 
 const navStyle = makeStyles((theme) => {
     return {
         root: {
             flex: 1,
-            height: '60vh'
+
         },
         title: {
             flexGrow: 1,
@@ -29,7 +33,7 @@ const navStyle = makeStyles((theme) => {
         infoIcon: {
             fontSize: '1.5rem',
             cursor: 'pointer',
-            color: theme.palette.secondary.dark
+            color: theme.palette.secondary.dark,
         },
         modal: {
             display: 'flex',
@@ -43,12 +47,16 @@ const navStyle = makeStyles((theme) => {
             padding: theme.spacing(2, 4, 3),
         },
         page: {
-
-            padding: theme.spacing(3),
         },
         toolBar: theme.mixins.toolbar,
         buttonWrapper: {
-            flexGrow: 1
+            flexGrow: 1,
+            [theme.breakpoints.down('sm')]: {
+                display: 'none'
+            },
+            [theme.breakpoints.up('sm')]: {
+                display: 'block'
+            },
 
         },
         rootButton: {
@@ -59,8 +67,51 @@ const navStyle = makeStyles((theme) => {
                 margin: theme.spacing(1),
             },
         },
+        iconContainer: {
+            display: 'none',
+            [theme.breakpoints.up('sm')]: {
+                display: 'block'
+            }
+        },
+        drawer: {
+            display: 'block',
+            [theme.breakpoints.up('sm')]: {
+                display: 'none'
+            }
+        },
+        menu: {
+            fontSize: '2rem',
+            cursor: 'pointer'
+        }
     }
 })
+
+const buttonItems = [
+    {
+        id: 1,
+        text: 'About me',
+        path: '/',
+        message: 'About me clicked'
+    },
+    {
+        id: 2,
+        text: 'My story',
+        path: '/story',
+        message: 'My story clicked'
+    },
+    {
+        id: 3,
+        text: 'Experience',
+        path: '/experience',
+        message: 'Experience clicked'
+    },
+    {
+        id: 4,
+        text: 'Contact',
+        path: '/contact',
+        message: 'Contact clicked'
+    },
+]
 
 export default function Navigation({ children }) {
 
@@ -78,7 +129,9 @@ export default function Navigation({ children }) {
 
     const IconContainer = () => {
         return (
-            <div>
+            <div
+                className={classes.iconContainer}
+            >
                 <div
                     onClick={() => {
                         handleOpen()
@@ -117,35 +170,61 @@ export default function Navigation({ children }) {
         )
     }
 
+    function TemporaryDrawer() {
+        const history = useHistory()
+        const classes = navStyle()
+
+        const [state, setState] = React.useState({
+
+            left: false,
+
+        });
+
+        const toggleDrawer = (anchor, open) => (event) => {
+            if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
+                return;
+            }
+
+            setState({ ...state, [anchor]: open });
+        };
+
+        const list = (anchor) => (
+            <div
+
+            >
+                <List>
+                    {buttonItems.map((item) => (
+                        <ListItem button key={item.id}>
+                            <ListItemText primary={item.text} onClick={() => {
+                                history.push(item.path)
+                                toggleDrawer(anchor, false)
+                            }} />
+                        </ListItem>
+                    ))}
+                </List>
+            </div>
+        );
+
+        return (
+            <div
+                className={classes.drawer}
+            >
+                {['left'].map((anchor) => (
+                    <React.Fragment key={anchor}>
+                        <BiMenu onClick={toggleDrawer(anchor, true)} className={classes.menu} />
+                        <Drawer anchor={anchor} open={state[anchor]} onClose={toggleDrawer(anchor, false)}>
+                            {list(anchor)}
+                        </Drawer>
+                    </React.Fragment>
+                ))}
+            </div>
+        );
+    }
+
     function BasicButtonGroup() {
         const history = useHistory()
 
-        const buttonItems = [
-            {
-                id: 1,
-                text: 'About me',
-                path: '/',
-                message: 'About me clicked'
-            },
-            {
-                id: 2,
-                text: 'My story',
-                path: '/story',
-                message: 'My story clicked'
-            },
-            {
-                id: 3,
-                text: 'Experience',
-                path: '/experience',
-                message: 'Experience clicked'
-            },
-            {
-                id: 4,
-                text: 'Contact',
-                path: '/contact',
-                message: 'Contact clicked'
-            },
-        ]
+
 
         return (
             <div className={classes.rootButton}>
@@ -175,8 +254,10 @@ export default function Navigation({ children }) {
                         variant='h4'
                     >
                         Pranaya Anargya
+
                     </Typography>
                     <IconContainer />
+                    <TemporaryDrawer />
                 </Toolbar>
             </AppBar>
             <div className={classes.page}>
