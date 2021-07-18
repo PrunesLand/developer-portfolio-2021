@@ -12,20 +12,43 @@ const expStyles = makeStyles((theme) => {
         },
         container: {
             display: 'grid',
-            gridTemplateColumns: 'auto auto auto',
-            width: '90vh',
-            margin: 'auto'
+            gridTemplateColumns: 'auto auto',
+            margin: 'auto',
+            padding: theme.spacing(2),
+            [theme.breakpoints.up('sm')]: {
+                gridTemplateColumns: 'auto auto auto',
+                width: '60vh'
+            },
+            gridGap: theme.spacing(2)
         },
         paper: {
-            width: '2rem',
-            height: '2rem',
+            width: theme.spacing(10),
+            height: theme.spacing(10),
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
-            margin: 'auto'
+            margin: 'auto',
+
         },
         icon: {
-            fontSize: '1.8rem'
+            fontSize: theme.spacing(5),
+            cursor: 'pointer'
+        },
+        section: {
+            alignItems: 'center',
+            [theme.breakpoints.up('sm')]: {
+
+            }
+        },
+        titleContainer: {
+
+            padding: theme.spacing(2)
+        },
+        title: {
+            fontSize: theme.typography.h4.fontSize,
+            display: 'flex',
+            justifyContent: 'center',
+            padding: theme.spacing(2)
         }
 
     }
@@ -92,9 +115,13 @@ const Experience = () => {
         <div
             className={classes.root}
         >
-            <section>
-                <div>
-                    <Typography variant="h3">What i'm experienced in....</Typography>
+            <section
+                className={classes.section}
+            >
+                <div
+                    className={classes.titleContainer}
+                >
+                    <Typography className={classes.title}>My Experiences...</Typography>
                 </div>
                 <div
                     className={classes.container}
