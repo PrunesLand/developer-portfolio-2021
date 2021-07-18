@@ -1,10 +1,11 @@
-import { makeStyles, Typography } from '@material-ui/core'
+import { Avatar, makeStyles, Typography } from '@material-ui/core'
 import React from 'react'
 import { SiJavascript, SiHtml5, SiCss3, SiReact, SiMaterialUi, SiNetlify } from 'react-icons/si'
 import { GrMysql } from 'react-icons/gr'
 import { DiGit } from 'react-icons/di'
 import Paper from '@material-ui/core/Paper';
 import { blue, cyan, orange, red, yellow } from '@material-ui/core/colors'
+
 
 const expStyles = makeStyles((theme) => {
     return {
@@ -29,10 +30,11 @@ const expStyles = makeStyles((theme) => {
             justifyContent: 'center',
             alignItems: 'center',
             margin: 'auto',
+            background: theme.palette.primary.light,
             '&:hover': {
-                background: theme.palette.primary.dark
-            },
-            cursor: 'pointer'
+                background: theme.palette.primary.dark,
+            }
+
 
         },
         icon: {
@@ -40,10 +42,9 @@ const expStyles = makeStyles((theme) => {
 
         },
         section: {
-            alignItems: 'center',
-            [theme.breakpoints.up('sm')]: {
-
-            }
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center'
         },
         titleContainer: {
 
@@ -58,6 +59,45 @@ const expStyles = makeStyles((theme) => {
         popover: {
             pointerEvents: 'none',
         },
+        eduWrapper: {
+            display: 'flex',
+            flexDirection: 'row',
+            padding: theme.spacing(2),
+            marginLeft: theme.spacing(5),
+            [theme.breakpoints.down('sm')]: {
+                flexDirection: 'column'
+            }
+        },
+        eduIcon: {
+            width: theme.spacing(15),
+            height: theme.spacing(15),
+            margin: 'auto',
+            padding: theme.spacing(1)
+        },
+        education: {
+            margin: 'auto',
+            padding: theme.spacing(3)
+        },
+        eduTitle: {
+            textAlign: 'center',
+            fontSize: theme.typography.h4.fontSize,
+            padding: theme.spacing(3)
+        },
+        uni: {
+            fontSize: theme.typography.h5.fontSize,
+            [theme.breakpoints.down('sm')]: {
+                fontSize: theme.spacing(3)
+            }
+        },
+        degree: {
+            fontSize: theme.typography.h6.fontSize,
+            [theme.breakpoints.down('sm')]: {
+                fontSize: theme.spacing(2)
+            }
+        },
+        date: {
+            fontSize: theme.typography.body2.fontSize
+        }
 
     }
 })
@@ -151,26 +191,32 @@ const Experience = () => {
                     }
 
                 </div>
-                <div>
-                    <Typography variant='h4'>Educational Background </Typography>
-                    <div>
+                <div
+                    className={classes.education}
+                >
+                    <Typography className={classes.eduTitle} >Educational Background </Typography>
+                    <div
+                        className={classes.eduWrapper}
+                    >
                         <div>
-
+                            <Avatar src="/mq_logo.png" className={classes.eduIcon} />
                         </div>
                         <div>
-                            <Typography variant='h5'>Macquarie University</Typography>
-                            <Typography variant='h6'>Bachelor of Information Technology with a major in Cybersecurity</Typography>
-                            <Typography variant='body2'>June 2019 - June 2021</Typography>
+                            <Typography className={classes.uni}>Macquarie University</Typography>
+                            <Typography className={classes.degree}>Bachelor of Information Technology with a major in Cybersecurity</Typography>
+                            <Typography className={classes.date}>June 2019 - June 2021</Typography>
                         </div>
                     </div>
-                    <div>
+                    <div
+                        className={classes.eduWrapper}
+                    >
                         <div>
-
+                            <Avatar src="/mq_logo.png" className={classes.eduIcon} />
                         </div>
                         <div>
-                            <Typography variant='h5'>Macquarie University</Typography>
-                            <Typography variant='h6'>Diploma of Information Technology</Typography>
-                            <Typography variant='body2'>June 2018 - February 2019</Typography>
+                            <Typography className={classes.uni}>Macquarie University</Typography>
+                            <Typography className={classes.degree}>Diploma of Information Technology</Typography>
+                            <Typography className={classes.date}>June 2018 - February 2019</Typography>
                         </div>
                     </div>
                 </div>
