@@ -4,6 +4,7 @@ import { SiJavascript, SiHtml5, SiCss3, SiReact, SiMaterialUi, SiNetlify } from 
 import { GrMysql } from 'react-icons/gr'
 import { DiGit } from 'react-icons/di'
 import Paper from '@material-ui/core/Paper';
+import { blue, cyan, orange, red, yellow } from '@material-ui/core/colors'
 
 const expStyles = makeStyles((theme) => {
     return {
@@ -28,11 +29,15 @@ const expStyles = makeStyles((theme) => {
             justifyContent: 'center',
             alignItems: 'center',
             margin: 'auto',
+            '&:hover': {
+                background: theme.palette.primary.dark
+            },
+            cursor: 'pointer'
 
         },
         icon: {
             fontSize: theme.spacing(5),
-            cursor: 'pointer'
+
         },
         section: {
             alignItems: 'center',
@@ -49,7 +54,10 @@ const expStyles = makeStyles((theme) => {
             display: 'flex',
             justifyContent: 'center',
             padding: theme.spacing(2)
-        }
+        },
+        popover: {
+            pointerEvents: 'none',
+        },
 
     }
 })
@@ -61,55 +69,57 @@ const Experience = () => {
     const icons = [
         {
             id: 1,
-            icon: <SiJavascript className={classes.icon} />,
+            icon: <SiJavascript className={classes.icon} color={yellow[500]} />,
             title: 'Javascript',
             category: 'Language'
         },
         {
             id: 2,
-            icon: <SiHtml5 className={classes.icon} />,
+            icon: <SiHtml5 className={classes.icon} color={red[700]} />,
             title: 'HTML',
             category: 'Language'
         },
         {
             id: 3,
-            icon: <SiCss3 className={classes.icon} />,
+            icon: <SiCss3 className={classes.icon} color={blue[500]} />,
             title: 'CSS',
             category: 'Language'
         },
         {
             id: 4,
-            icon: <DiGit className={classes.icon} />,
+            icon: <DiGit className={classes.icon} color={orange[900]} />,
             title: 'Git version control',
             category: 'Version control'
         },
         {
             id: 5,
-            icon: <SiReact className={classes.icon} />,
+            icon: <SiReact className={classes.icon} color={blue[300]} />,
             title: 'React',
             category: 'Library'
 
         },
         {
             id: 6,
-            icon: <SiMaterialUi className={classes.icon} />,
+            icon: <SiMaterialUi className={classes.icon} color={blue[900]} />,
             title: 'Material UI',
             category: 'Framework'
         },
         {
             id: 7,
-            icon: <SiNetlify className={classes.icon} />,
+            icon: <SiNetlify className={classes.icon} color={cyan[500]} />,
             title: 'Netlify',
             category: 'Deployment'
         },
         {
             id: 8,
-            icon: <GrMysql className={classes.icon} />,
+            icon: <GrMysql className={classes.icon} color={blue[900]} />,
             title: 'SQL',
             category: 'Language'
         },
 
     ]
+
+
 
     return (
         <div
@@ -127,14 +137,42 @@ const Experience = () => {
                     className={classes.container}
                 >
                     {icons.map(item => (
-                        <Paper
+                        <div
                             key={item.id}
-                            className={classes.paper}
                         >
-                            {item.icon}
-                        </Paper>
+                            <Paper
+                                className={classes.paper}
+                            >
+                                {item.icon}
+                            </Paper>
+
+                        </div>
                     ))
                     }
+
+                </div>
+                <div>
+                    <Typography variant='h4'>Educational Background </Typography>
+                    <div>
+                        <div>
+
+                        </div>
+                        <div>
+                            <Typography variant='h5'>Macquarie University</Typography>
+                            <Typography variant='h6'>Bachelor of Information Technology with a major in Cybersecurity</Typography>
+                            <Typography variant='body2'>June 2019 - June 2021</Typography>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+
+                        </div>
+                        <div>
+                            <Typography variant='h5'>Macquarie University</Typography>
+                            <Typography variant='h6'>Diploma of Information Technology</Typography>
+                            <Typography variant='body2'>June 2018 - February 2019</Typography>
+                        </div>
+                    </div>
                 </div>
             </section>
         </div>
