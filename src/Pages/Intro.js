@@ -24,7 +24,7 @@ const introStyle = makeStyles((theme) => {
                 width: '60vw'
             },
             [theme.breakpoints.up('lg')]: {
-                width: '40vw'
+                width: '50vw'
             }
 
         },
@@ -41,7 +41,7 @@ const introStyle = makeStyles((theme) => {
             marginTop: theme.spacing(3),
             padding: theme.spacing(1),
             [theme.breakpoints.up('sm')]: {
-                width: '70vw'
+                width: '80vw'
             }
         },
         icons: {
@@ -62,6 +62,12 @@ const introStyle = makeStyles((theme) => {
             color: '#0077af',
             cursor: 'pointer'
         },
+        title: {
+            fontSize: theme.typography.h4.fontSize,
+            [theme.breakpoints.up('md')]: {
+                fontSize: theme.typography.h2.fontSize
+            }
+        }
     }
 })
 
@@ -118,7 +124,7 @@ export default function Intro() {
                     <div
                         className={classes.container}
                     >
-                        <Typography variant='h4'>React Developer</Typography>
+                        <Typography className={classes.title} >React Developer</Typography>
                         <Typography variant='h6'>Hi, I'm Pranaya.</Typography>
                         <Typography variant='subtitle2'>I'm a enthusiastic developer with an interest in ReactJS. </Typography>
                         <Typography>I'm experienced in various programming languages and tools used in React Development.</Typography>
