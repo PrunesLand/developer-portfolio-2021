@@ -12,6 +12,7 @@ import Drawer from '@material-ui/core/Drawer';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
+import { BiMenu } from 'react-icons/bi'
 
 const navStyle = makeStyles((theme) => {
     return {
@@ -77,9 +78,40 @@ const navStyle = makeStyles((theme) => {
             [theme.breakpoints.up('sm')]: {
                 display: 'none'
             }
+        },
+        menu: {
+            fontSize: '2rem',
+            cursor: 'pointer'
         }
     }
 })
+
+const buttonItems = [
+    {
+        id: 1,
+        text: 'About me',
+        path: '/',
+        message: 'About me clicked'
+    },
+    {
+        id: 2,
+        text: 'My story',
+        path: '/story',
+        message: 'My story clicked'
+    },
+    {
+        id: 3,
+        text: 'Experience',
+        path: '/experience',
+        message: 'Experience clicked'
+    },
+    {
+        id: 4,
+        text: 'Contact',
+        path: '/contact',
+        message: 'Contact clicked'
+    },
+]
 
 export default function Navigation({ children }) {
 
@@ -139,6 +171,9 @@ export default function Navigation({ children }) {
     }
 
     function TemporaryDrawer() {
+        const history = useHistory()
+        const classes = navStyle()
+
         const [state, setState] = React.useState({
 
             left: false,
@@ -155,14 +190,15 @@ export default function Navigation({ children }) {
 
         const list = (anchor) => (
             <div
-                role="presentation"
-                onClick={toggleDrawer(anchor, false)}
-                onKeyDown={toggleDrawer(anchor, false)}
+
             >
                 <List>
-                    {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-                        <ListItem button key={text}>
-                            <ListItemText primary={text} />
+                    {buttonItems.map((item) => (
+                        <ListItem button key={item.id}>
+                            <ListItemText primary={item.text} onClick={() => {
+                                history.push(item.path)
+                                toggleDrawer(anchor, false)
+                            }} />
                         </ListItem>
                     ))}
                 </List>
@@ -175,7 +211,7 @@ export default function Navigation({ children }) {
             >
                 {['left'].map((anchor) => (
                     <React.Fragment key={anchor}>
-                        <Button onClick={toggleDrawer(anchor, true)}>{anchor}</Button>
+                        <BiMenu onClick={toggleDrawer(anchor, true)} className={classes.menu} />
                         <Drawer anchor={anchor} open={state[anchor]} onClose={toggleDrawer(anchor, false)}>
                             {list(anchor)}
                         </Drawer>
@@ -188,32 +224,7 @@ export default function Navigation({ children }) {
     function BasicButtonGroup() {
         const history = useHistory()
 
-        const buttonItems = [
-            {
-                id: 1,
-                text: 'About me',
-                path: '/',
-                message: 'About me clicked'
-            },
-            {
-                id: 2,
-                text: 'My story',
-                path: '/story',
-                message: 'My story clicked'
-            },
-            {
-                id: 3,
-                text: 'Experience',
-                path: '/experience',
-                message: 'Experience clicked'
-            },
-            {
-                id: 4,
-                text: 'Contact',
-                path: '/contact',
-                message: 'Contact clicked'
-            },
-        ]
+
 
         return (
             <div className={classes.rootButton}>
