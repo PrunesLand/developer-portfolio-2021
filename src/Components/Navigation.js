@@ -91,9 +91,53 @@ const navStyle = makeStyles((theme) => {
         },
         footer: {
             background: theme.palette.primary.dark,
-            height: '10vh',
+            height: '20vh',
 
+        },
+        fContainer: {
+            display: 'flex',
+            flexDirection: 'row',
+
+        },
+        listDiv: {
+            width: '50%',
+            textAlign: 'left',
+
+        },
+        listItem: {
+            listStyle: 'none',
+
+        },
+        listText: {
+            fontSize: theme.spacing(1.8),
+            textAlign: 'left'
+        },
+        fContact: {
+            width: '50%',
+            textAlign: 'right',
+            padding: theme.spacing(2)
+        },
+        github: {
+            fontSize: theme.spacing(3),
+            cursor: 'pointer',
+            padding: '0.5vh 2vh'
+        },
+        linkedin: {
+            fontSize: theme.spacing(3),
+            color: '#0077af',
+            cursor: 'pointer',
+            padding: '0.5vh 2vh'
+        },
+        contactText: {
+            fontSize: theme.spacing(1.8)
+        },
+        copyright: {
+            fontSize: theme.spacing(1.8),
+            textAlign: 'center',
+            color: theme.palette.secondary.main,
+            paddingTop: theme.spacing(2)
         }
+
     }
 })
 
@@ -289,34 +333,52 @@ export default function Navigation({ children }) {
                         className={classes.listDiv}
                     >
                         <ul>
-                            <Typography>Navigate</Typography>
+
                             <li
-                                className={listItem}
+                                className={classes.listItem}
                             >
-                                <Typography>About me</Typography>
+                                <Typography
+                                    className={classes.listText}
+                                >
+                                    About me
+                                </Typography>
                             </li>
                             <li
-                                className={listItem}
+                                className={classes.listItem}
                             >
-                                <Typography>My Story</Typography>
+                                <Typography
+                                    className={classes.listText}
+                                >My Story</Typography>
                             </li>
                             <li
-                                className={listItem}
+                                className={classes.listItem}
                             >
-                                <Typography>Expperience</Typography>
+                                <Typography
+                                    className={classes.listText}
+                                >Expperience</Typography>
                             </li>
                             <li
-                                className={listItem}
+                                className={classes.listItem}
                             >
-                                <Typography>Contact</Typography>
+                                <Typography
+                                    className={classes.listText}
+                                >Contact</Typography>
                             </li>
                         </ul>
                     </div>
                     <div
                         className={classes.fContact}
                     >
-                        <Typography> Contact me at:</Typography>
-                        <Typography>pranarg.business@gmail.com</Typography>
+                        <Typography
+                            className={classes.contactText}
+                        >
+                            Contact me at:
+                        </Typography>
+                        <Typography
+                            className={classes.contactText}
+                        >
+                            pranarg.business@gmail.com
+                        </Typography>
                         <div>
                             <FaGithub className={classes.github} onClick={() => window.open('https://github.com/PrunesLand')} />
                             <FaLinkedin className={classes.linkedin} onClick={() => window.open('https://www.linkedin.com/in/pranaya-anargya-22b585195/')} />
@@ -324,7 +386,9 @@ export default function Navigation({ children }) {
                     </div>
                 </div>
                 <div>
-                    <Typography>
+                    <Typography
+                        className={classes.copyright}
+                    >
                         &copy; 2021 Prunesland
                     </Typography>
                 </div>
