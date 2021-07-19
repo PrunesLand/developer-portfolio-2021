@@ -84,6 +84,16 @@ const introStyle = makeStyles((theme) => {
             '&:hover': {
                 background: theme.palette.primary.main
             }
+        },
+        react: {
+            textDecoration: 'none',
+            color: "#000",
+            'a:visited': {
+                color: '#000'
+            },
+            '&:hover': {
+                color: '#61dafb'
+            }
         }
 
     }
@@ -143,10 +153,10 @@ export default function Intro() {
                         className={classes.container}
                     >
 
-                        <Typography className={classes.title} >React Developer</Typography>
+                        <Typography className={classes.title} > <a className={classes.react} href='https://reactjs.org/'>React</a> Developer</Typography>
                         <Typography variant='h6'>Hi, I'm Pranaya.</Typography>
-                        <Typography variant='subtitle2'>I'm a enthusiastic developer with an interest in ReactJS. </Typography>
-                        <Typography>I'm experienced in various programming techniques and tools used in React Development.</Typography>
+                        <Typography variant='subtitle1'>I'm a enthusiastic developer with an interest in <a className={classes.react} href='https://reactjs.org/'>ReactJS</a>. </Typography>
+                        <Typography variant='subtitle1'>I'm experienced in various programming techniques and tools used in <a className={classes.react} href='https://reactjs.org/'>React</a> Development.</Typography>
                         <div className={classes.icons}>
                             {contactIcons.map(item => (
                                 <div
@@ -165,6 +175,6 @@ export default function Intro() {
                     </div>
                 </Paper>
             </section>
-        </div>
+        </div >
     )
 }

@@ -101,6 +101,10 @@ const expStyles = makeStyles((theme) => {
         },
         date: {
             fontSize: theme.typography.body2.fontSize
+        },
+        details: {
+            fontSize: theme.spacing(1.8),
+            padding: theme.spacing(1)
         }
 
     }
@@ -209,6 +213,20 @@ const Experience = () => {
                             <Typography className={classes.uni}>Macquarie University</Typography>
                             <Typography className={classes.degree}>Bachelor of Information Technology with a major in Cybersecurity</Typography>
                             <Typography className={classes.date}>June 2019 - June 2021</Typography>
+                            <ul>
+                                <li>
+                                    <Typography className={classes.details}>Admitted into a <a href='https://www.mq.edu.au/study/why-study-here/employability/learning-for-life'>PACE Program</a> and undertook professional experience with trusted partner companies.</Typography>
+                                </li>
+                                <li>
+                                    <Typography className={classes.details}>Undertook the <a href='https://students.mq.edu.au/careers/get-ready/development-programs/professional-development-program'>Profesional Development Program</a>.</Typography>
+                                </li>
+                                <li>
+                                    <Typography className={classes.details}>Participated in the <a href='https://students.mq.edu.au/uni-life/leadership/global-leadership-program'>Global Leadership Program</a>.</Typography>
+                                </li>
+                                <li>
+                                    <Typography className={classes.details}>Became a mentor in the <a href='https://mq.au.peoplegrove.com/hub/macquarie/programs-v2/macquarie-mentoring-program/about'>Macquarie Mentors Program</a>.</Typography>
+                                </li>
+                            </ul>
                         </div>
                     </Paper>
                     <Paper
