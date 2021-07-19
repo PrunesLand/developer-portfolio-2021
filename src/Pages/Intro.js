@@ -8,14 +8,17 @@ const introStyle = makeStyles((theme) => {
     return {
         root: {
             overflow: 'none',
+            height: '100vh'
         },
         section: {
             height: '100%',
             marginTop: theme.spacing(5),
+            padding: theme.spacing(2)
         },
         hero: {
             display: 'flex',
             margin: 'auto',
+            padding: theme.spacing(2),
             [theme.breakpoints.down('sm')]: {
                 flexDirection: 'column',
             },
@@ -68,10 +71,7 @@ const introStyle = makeStyles((theme) => {
                 fontSize: theme.typography.h2.fontSize
             }
         },
-        paper: {
-            padding: theme.spacing(2),
 
-        }
     }
 })
 
@@ -117,7 +117,7 @@ export default function Intro() {
             <section
                 className={classes.section}
             >
-                <div
+                <Paper
                     className={classes.hero}
                 >
                     <div
@@ -128,26 +128,24 @@ export default function Intro() {
                     <div
                         className={classes.container}
                     >
-                        <Paper
-                            className={classes.paper}
-                        >
-                            <Typography className={classes.title} >React Developer</Typography>
-                            <Typography variant='h6'>Hi, I'm Pranaya.</Typography>
-                            <Typography variant='subtitle2'>I'm a enthusiastic developer with an interest in ReactJS. </Typography>
-                            <Typography>I'm experienced in various programming languages and tools used in React Development.</Typography>
-                            <div className={classes.icons}>
-                                {contactIcons.map(item => (
-                                    <div
-                                        key={item.id}
-                                        className={classes.iconItem}
-                                    >
-                                        {item.icon}
-                                    </div>
-                                ))}
-                            </div>
-                        </Paper>
+
+                        <Typography className={classes.title} >React Developer</Typography>
+                        <Typography variant='h6'>Hi, I'm Pranaya.</Typography>
+                        <Typography variant='subtitle2'>I'm a enthusiastic developer with an interest in ReactJS. </Typography>
+                        <Typography>I'm experienced in various programming languages and tools used in React Development.</Typography>
+                        <div className={classes.icons}>
+                            {contactIcons.map(item => (
+                                <div
+                                    key={item.id}
+                                    className={classes.iconItem}
+                                >
+                                    {item.icon}
+                                </div>
+                            ))}
+                        </div>
+
                     </div>
-                </div>
+                </Paper>
             </section>
         </div>
     )

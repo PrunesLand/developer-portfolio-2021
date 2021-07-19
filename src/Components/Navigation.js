@@ -13,6 +13,7 @@ import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import { BiMenu } from 'react-icons/bi'
+import { FaGithub, FaLinkedin } from 'react-icons/fa'
 
 const navStyle = makeStyles((theme) => {
     return {
@@ -31,7 +32,6 @@ const navStyle = makeStyles((theme) => {
             marginLeft: theme.spacing(4)
         },
         appbar: {
-            flexGrow: 1,
             background: theme.palette.primary.dark
         },
         infoIcon: {
@@ -51,10 +51,12 @@ const navStyle = makeStyles((theme) => {
             padding: theme.spacing(2, 4, 3),
         },
         page: {
+            height: '100%'
         },
         toolBar: theme.mixins.toolbar,
         buttonWrapper: {
             flexGrow: 1,
+            padding: theme.spacing(2),
             [theme.breakpoints.down('sm')]: {
                 display: 'none'
             },
@@ -86,6 +88,11 @@ const navStyle = makeStyles((theme) => {
         menu: {
             fontSize: '2rem',
             cursor: 'pointer'
+        },
+        footer: {
+            background: theme.palette.primary.dark,
+            height: '10vh',
+
         }
     }
 })
@@ -248,10 +255,11 @@ export default function Navigation({ children }) {
             className={classes.root}
         >
             <AppBar
-                position='static'
                 className={classes.appbar}
             >
-                <Toolbar>
+                <Toolbar
+
+                >
 
                     <Typography
                         className={classes.title}
@@ -264,13 +272,63 @@ export default function Navigation({ children }) {
                 </Toolbar>
             </AppBar>
             <div className={classes.page}>
-                <div className={classes.toolBar}>
-                    {children}
-                </div>
+                <div className={classes.toolBar}></div>
+                {children}
+
             </div>
             <div className={classes.buttonWrapper}>
                 <BasicButtonGroup />
             </div>
+            <footer
+                className={classes.footer}
+            >
+                <div
+                    className={classes.fContainer}
+                >
+                    <div
+                        className={classes.listDiv}
+                    >
+                        <ul>
+                            <Typography>Navigate</Typography>
+                            <li
+                                className={listItem}
+                            >
+                                <Typography>About me</Typography>
+                            </li>
+                            <li
+                                className={listItem}
+                            >
+                                <Typography>My Story</Typography>
+                            </li>
+                            <li
+                                className={listItem}
+                            >
+                                <Typography>Expperience</Typography>
+                            </li>
+                            <li
+                                className={listItem}
+                            >
+                                <Typography>Contact</Typography>
+                            </li>
+                        </ul>
+                    </div>
+                    <div
+                        className={classes.fContact}
+                    >
+                        <Typography> Contact me at:</Typography>
+                        <Typography>pranarg.business@gmail.com</Typography>
+                        <div>
+                            <FaGithub className={classes.github} onClick={() => window.open('https://github.com/PrunesLand')} />
+                            <FaLinkedin className={classes.linkedin} onClick={() => window.open('https://www.linkedin.com/in/pranaya-anargya-22b585195/')} />
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <Typography>
+                        &copy; 2021 Prunesland
+                    </Typography>
+                </div>
+            </footer>
         </div>
     )
 }
