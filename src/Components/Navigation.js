@@ -24,12 +24,14 @@ const navStyle = makeStyles((theme) => {
         title: {
             flexGrow: 1,
             textAlign: 'center',
-            color: theme.palette.secondary.dark,
+            color: theme.palette.text.secondary,
             fontSize: theme.typography.h6.fontSize,
             [theme.breakpoints.up('sm')]: {
                 fontSize: theme.typography.h4.fontSize
             },
-            marginLeft: theme.spacing(4)
+            marginLeft: theme.spacing(4),
+            cursor: 'pointer',
+
         },
         appbar: {
             background: theme.palette.primary.dark
@@ -37,7 +39,10 @@ const navStyle = makeStyles((theme) => {
         infoIcon: {
             fontSize: '1.5rem',
             cursor: 'pointer',
-            color: theme.palette.secondary.dark,
+            color: theme.palette.text.secondary,
+            '&:hover': {
+                color: theme.palette.text.primary
+            }
         },
         modal: {
             display: 'flex',
@@ -56,7 +61,7 @@ const navStyle = makeStyles((theme) => {
         toolBar: theme.mixins.toolbar,
         buttonWrapper: {
             flexGrow: 1,
-            padding: theme.spacing(2),
+            padding: theme.spacing(4),
             [theme.breakpoints.down('sm')]: {
                 display: 'none'
             },
@@ -91,7 +96,10 @@ const navStyle = makeStyles((theme) => {
         },
         footer: {
             background: theme.palette.primary.dark,
-            height: '20vh',
+            height: '25vh',
+            [theme.breakpoints.up('md')]: {
+                height: '30vh'
+            }
 
         },
         fContainer: {
@@ -106,36 +114,56 @@ const navStyle = makeStyles((theme) => {
         },
         listItem: {
             listStyle: 'none',
-
+            cursor: 'pointer'
         },
         listText: {
             fontSize: theme.spacing(1.8),
-            textAlign: 'left'
+            textAlign: 'left',
+            color: theme.palette.text.secondary,
+            '&:hover': {
+                color: theme.palette.text.primary
+            },
+            [theme.breakpoints.up('sm')]: {
+                fontSize: theme.spacing(2.5)
+            }
         },
         fContact: {
             width: '50%',
             textAlign: 'right',
-            padding: theme.spacing(2)
+            padding: theme.spacing(2),
         },
         github: {
             fontSize: theme.spacing(3),
             cursor: 'pointer',
-            padding: '0.5vh 2vh'
+            padding: '0.5vh 2vh',
+            [theme.breakpoints.up('sm')]: {
+                fontSize: theme.spacing(4)
+            }
         },
         linkedin: {
             fontSize: theme.spacing(3),
             color: '#0077af',
             cursor: 'pointer',
-            padding: '0.5vh 2vh'
+            padding: '0.5vh 2vh',
+            [theme.breakpoints.up('sm')]: {
+                fontSize: theme.spacing(4)
+            }
         },
         contactText: {
-            fontSize: theme.spacing(1.8)
+            fontSize: theme.spacing(1.8),
+            color: theme.palette.text.secondary,
+            [theme.breakpoints.up('sm')]: {
+                fontSize: theme.spacing(2.5)
+            }
         },
         copyright: {
             fontSize: theme.spacing(1.8),
             textAlign: 'center',
-            color: theme.palette.secondary.main,
-            paddingTop: theme.spacing(2)
+            color: theme.palette.text.secondary,
+            paddingTop: theme.spacing(3)
+        },
+        buttonText: {
+            color: theme.palette.text.secondary
         }
 
     }
@@ -169,7 +197,7 @@ const buttonItems = [
 ]
 
 export default function Navigation({ children }) {
-
+    const history = useHistory()
     const classes = navStyle() // to use the styles of makestyle() from material-ui
 
     const [open, setOpen] = React.useState(false);
@@ -264,7 +292,7 @@ export default function Navigation({ children }) {
             <div
                 className={classes.drawer}
             >
-                {['left'].map((anchor) => (
+                {['right'].map((anchor) => (
                     <React.Fragment key={anchor}>
                         <BiMenu onClick={toggleDrawer(anchor, true)} className={classes.menu} />
                         <Drawer anchor={anchor} open={state[anchor]} onClose={toggleDrawer(anchor, false)}>
@@ -283,7 +311,7 @@ export default function Navigation({ children }) {
 
         return (
             <div className={classes.rootButton}>
-                <ButtonGroup variant="text" color="secondary" aria-label="text primary button group">
+                <ButtonGroup variant="text" color='default' aria-label="text primary button group">
                     {buttonItems.map(item => (
                         <Button key={item.id} href={item.path} onClick={() => history.push(item.path)}>
                             {item.text}
@@ -339,6 +367,9 @@ export default function Navigation({ children }) {
                             >
                                 <Typography
                                     className={classes.listText}
+                                    onClick={() => {
+                                        history.push('/')
+                                    }}
                                 >
                                     About me
                                 </Typography>
@@ -348,21 +379,36 @@ export default function Navigation({ children }) {
                             >
                                 <Typography
                                     className={classes.listText}
-                                >My Story</Typography>
+                                    onClick={() => {
+                                        history.push('/story')
+                                    }}
+                                >
+                                    My Story
+                                </Typography>
                             </li>
                             <li
                                 className={classes.listItem}
                             >
                                 <Typography
                                     className={classes.listText}
-                                >Expperience</Typography>
+                                    onClick={() => {
+                                        history.push('/experience')
+                                    }}
+                                >
+                                    Expperience
+                                </Typography>
                             </li>
                             <li
                                 className={classes.listItem}
                             >
                                 <Typography
                                     className={classes.listText}
-                                >Contact</Typography>
+                                    onClick={() => {
+                                        history.push('/contact')
+                                    }}
+                                >
+                                    Contact
+                                </Typography>
                             </li>
                         </ul>
                     </div>
@@ -389,7 +435,7 @@ export default function Navigation({ children }) {
                     <Typography
                         className={classes.copyright}
                     >
-                        &copy; 2021 Prunesland
+                        &copy; {new Date().getFullYear()} Prunesland
                     </Typography>
                 </div>
             </footer>

@@ -9,14 +9,14 @@ import Contact from './Pages/Contact'
 const theme = createTheme({
   palette: {
     primary: {
-      main: '#bdbdbd',
-      light: '#efefef',
-      dark: '#8d8d8d'
+      main: '#9fa8da',
+      light: '#d1d9ff',
+      dark: '#6f79a8'
     },
     secondary: {
-      main: '#455a64',
-      light: '#718792',
-      dark: '#1c313a'
+      main: '#9fc5da',
+      light: '#d1f8ff',
+      dark: '#6f94a8'
 
     }
 
