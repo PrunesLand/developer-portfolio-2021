@@ -62,8 +62,8 @@ const expStyles = makeStyles((theme) => {
         eduWrapper: {
             display: 'flex',
             flexDirection: 'row',
-            padding: theme.spacing(2),
-            marginLeft: theme.spacing(5),
+            margin: theme.spacing(2),
+            padding: theme.spacing(3),
             [theme.breakpoints.down('sm')]: {
                 flexDirection: 'column'
             }
@@ -195,7 +195,7 @@ const Experience = () => {
                     className={classes.education}
                 >
                     <Typography className={classes.eduTitle} >Educational Background </Typography>
-                    <div
+                    <Paper
                         className={classes.eduWrapper}
                     >
                         <div>
@@ -206,8 +206,8 @@ const Experience = () => {
                             <Typography className={classes.degree}>Bachelor of Information Technology with a major in Cybersecurity</Typography>
                             <Typography className={classes.date}>June 2019 - June 2021</Typography>
                         </div>
-                    </div>
-                    <div
+                    </Paper>
+                    <Paper
                         className={classes.eduWrapper}
                     >
                         <div>
@@ -218,7 +218,7 @@ const Experience = () => {
                             <Typography className={classes.degree}>Diploma of Information Technology</Typography>
                             <Typography className={classes.date}>June 2018 - February 2019</Typography>
                         </div>
-                    </div>
+                    </Paper>
                 </div>
             </section>
         </div>
