@@ -30,8 +30,6 @@ const navStyle = makeStyles((theme) => {
                 fontSize: theme.typography.h4.fontSize
             },
             marginLeft: theme.spacing(4),
-            cursor: 'pointer',
-
         },
         appbar: {
             background: theme.palette.primary.dark
@@ -172,13 +170,13 @@ const navStyle = makeStyles((theme) => {
 const buttonItems = [
     {
         id: 1,
-        text: 'About me',
+        text: 'About Me',
         path: '/',
         message: 'About me clicked'
     },
     {
         id: 2,
-        text: 'My story',
+        text: 'My Story',
         path: '/story',
         message: 'My story clicked'
     },
@@ -395,7 +393,7 @@ export default function Navigation({ children }) {
                                         history.push('/experience')
                                     }}
                                 >
-                                    Expperience
+                                    Experience
                                 </Typography>
                             </li>
                             <li
