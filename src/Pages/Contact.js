@@ -6,7 +6,10 @@ const contactPage = makeStyles((theme) => {
     return {
         root: {
             flexGrow: 1,
-            height: '100vh'
+            height: '90vh',
+            [theme.breakpoints.up('md')]: {
+                height: '120vh'
+            }
         },
         container: {
             display: 'flex',
@@ -26,10 +29,21 @@ const contactPage = makeStyles((theme) => {
             margin: 'auto',
             [theme.breakpoints.up('sm')]: {
                 width: '50vw'
-            }
+            },
+
         },
         paperWrapper: {
             padding: theme.spacing(1)
+        },
+        image: {
+            display: 'none',
+            padding: theme.spacing(2),
+            margin: 'auto',
+            [theme.breakpoints.up('md')]: {
+                width: theme.spacing(45),
+                display: 'block'
+            }
+
         }
     }
 })
@@ -53,6 +67,7 @@ const Contact = () => {
                         className={classes.paper}
                     >
                         <Typography>I'm an active Github user. View more of my works at <a href="https://github.com/PrunesLand/developer-portfolio-2021">Github</a> </Typography>
+                        <img src="/github_ss.png" alt="Github Profile" className={classes.image} />
                     </Paper>
                 </div>
                 <div
@@ -64,6 +79,7 @@ const Contact = () => {
                         <Typography>
                             View my professional profile at my <a href='https://www.linkedin.com/in/pranaya-anargya-22b585195/'>LinkedIn</a>. Connect with me and let's have a chat.
                         </Typography>
+                        <img src="/linkedin_ss.png" alt="Github Profile" className={classes.image} />
                     </Paper>
                 </div>
                 <div
@@ -72,7 +88,7 @@ const Contact = () => {
                     <Paper
                         className={classes.paper}
                     >
-                        <Typography>To have a direct conversation with me, just shoot me a mail at <u>pranarg.business@gmail.com</u> and talk about programming. I'm always keen on learning new things!</Typography>
+                        <Typography>To have a direct conversation with me, just shoot me a mail at <u>pranarg.business@gmail.com</u> and let's talk about programming. I'm always keen on learning new things!</Typography>
                     </Paper>
                 </div>
             </section>

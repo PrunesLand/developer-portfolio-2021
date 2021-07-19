@@ -12,6 +12,9 @@ const useStyles = makeStyles((theme) => ({
         '& > *': {
             margin: theme.spacing(1),
         },
+        text: {
+            color: theme.palette.text.primary
+        }
     },
 }));
 
@@ -48,9 +51,9 @@ export default function BasicButtonGroup() {
 
     return (
         <div className={classes.root}>
-            <ButtonGroup variant="text" color="secondary" aria-label="text primary button group">
+            <ButtonGroup variant="text" className={classes.text} aria-label="text primary button group">
                 {buttonItems.map(item => (
-                    <Button key={item.id} href={item.path} onClick={() => history.push(item.path)}>
+                    <Button key={item.id} href={item.path} className={classes.text} onClick={() => history.push(item.path)}>
                         {item.text}
                     </Button>
                 ))}

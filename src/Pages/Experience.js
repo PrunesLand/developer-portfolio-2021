@@ -30,10 +30,11 @@ const expStyles = makeStyles((theme) => {
             justifyContent: 'center',
             alignItems: 'center',
             margin: 'auto',
-            background: theme.palette.primary.light,
+            background: theme.palette.background.paper,
             '&:hover': {
                 background: theme.palette.primary.dark,
-            }
+            },
+
 
 
         },
@@ -66,6 +67,9 @@ const expStyles = makeStyles((theme) => {
             padding: theme.spacing(3),
             [theme.breakpoints.down('sm')]: {
                 flexDirection: 'column'
+            },
+            "&:hover": {
+                background: theme.palette.primary.dark
             }
         },
         eduIcon: {
