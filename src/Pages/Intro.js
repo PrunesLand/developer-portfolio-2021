@@ -35,11 +35,21 @@ const introStyle = makeStyles((theme) => {
         },
         profile: {
             width: theme.spacing(20),
-            height: theme.spacing(20)
+            height: theme.spacing(20),
+            WebkitUserSelect: 'none',
+            WebkitTouchCallout: 'none',
+            MozUserSelect: 'none',
+            msUserSelect: 'none',
+            userSelect: 'none'
         },
         profileContainer: {
             padding: theme.spacing(2),
-            margin: 'auto'
+            margin: 'auto',
+            WebkitUserSelect: 'none',
+            WebkitTouchCallout: 'none',
+            MozUserSelect: 'none',
+            msUserSelect: 'none',
+            userSelect: 'none'
         },
         container: {
 
@@ -99,17 +109,26 @@ const introStyle = makeStyles((theme) => {
     }
 })
 
+
+
 export default function Intro() {
 
     const classes = introStyle()
 
+    const preventTheft = () => (
+        document.addEventListener('contextmenu', event => event.preventDefault())
+    )
+
     const Profile = () => {
+
         return (
 
             <Avatar
                 alt='Pranaya Anargya'
                 src="/profile_photo.jpg"
                 className={classes.profile}
+                onClick={preventTheft()}
+
             />
 
         )
