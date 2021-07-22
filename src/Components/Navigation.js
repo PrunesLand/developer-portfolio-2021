@@ -115,7 +115,7 @@ const navStyle = makeStyles((theme) => {
             cursor: 'pointer'
         },
         listText: {
-            fontSize: theme.spacing(1.8),
+            fontSize: theme.spacing(1.5),
             textAlign: 'left',
             color: theme.palette.text.secondary,
             '&:hover': {
@@ -148,7 +148,7 @@ const navStyle = makeStyles((theme) => {
             }
         },
         contactText: {
-            fontSize: theme.spacing(1.8),
+            fontSize: theme.spacing(1.5),
             color: theme.palette.text.secondary,
             [theme.breakpoints.up('sm')]: {
                 fontSize: theme.spacing(2.5)
