@@ -31,7 +31,7 @@ const introStyle = makeStyles((theme) => {
             [theme.breakpoints.up('lg')]: {
                 width: '50vw'
             },
-
+            background: theme.palette.primary.main
         },
         profile: {
             width: theme.spacing(20),
@@ -92,7 +92,7 @@ const introStyle = makeStyles((theme) => {
             padding: theme.spacing(1),
             background: theme.palette.primary.light,
             '&:hover': {
-                background: theme.palette.primary.main
+                background: theme.palette.primary.dark
             }
         },
         react: {

@@ -32,7 +32,7 @@ const navStyle = makeStyles((theme) => {
             marginLeft: theme.spacing(4),
         },
         appbar: {
-            background: theme.palette.primary.dark
+            background: theme.palette.primary.main
         },
         infoIcon: {
             fontSize: '1.5rem',
@@ -46,12 +46,14 @@ const navStyle = makeStyles((theme) => {
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
+
         },
         paper: {
-            backgroundColor: theme.palette.background.paper,
+            backgroundColor: theme.palette.primary.main,
             border: '2px solid #000',
             boxShadow: theme.shadows[5],
             padding: theme.spacing(2, 4, 3),
+            fontFamily: theme.typography.fontFamily
         },
         page: {
             height: '100%'
@@ -93,7 +95,7 @@ const navStyle = makeStyles((theme) => {
             cursor: 'pointer'
         },
         footer: {
-            background: theme.palette.primary.dark,
+            background: theme.palette.primary.main,
             height: '25vh',
             [theme.breakpoints.up('md')]: {
                 height: '30vh'

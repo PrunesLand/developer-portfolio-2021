@@ -29,7 +29,8 @@ const storyStyles = makeStyles((theme) => {
             padding: theme.spacing(1)
         },
         paper: {
-            padding: theme.spacing(1)
+            padding: theme.spacing(1),
+            background: theme.palette.primary.main
         }
     }
 })

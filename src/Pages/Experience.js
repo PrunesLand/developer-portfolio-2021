@@ -30,7 +30,7 @@ const expStyles = makeStyles((theme) => {
             justifyContent: 'center',
             alignItems: 'center',
             margin: 'auto',
-            background: theme.palette.background.paper,
+            background: theme.palette.primary.light,
             [theme.breakpoints.up('sm')]: {
                 '&:hover': {
                     background: theme.palette.primary.dark,
@@ -67,6 +67,7 @@ const expStyles = makeStyles((theme) => {
             flexDirection: 'row',
             margin: theme.spacing(2),
             padding: theme.spacing(3),
+            background: theme.palette.primary.main,
             [theme.breakpoints.down('sm')]: {
                 flexDirection: 'column'
             },

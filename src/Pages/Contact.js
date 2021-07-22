@@ -30,6 +30,7 @@ const contactPage = makeStyles((theme) => {
             [theme.breakpoints.up('sm')]: {
                 width: '50vw'
             },
+            background: theme.palette.primary.main
 
         },
         paperWrapper: {
