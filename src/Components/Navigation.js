@@ -313,7 +313,7 @@ export default function Navigation({ children }) {
             <div className={classes.rootButton}>
                 <ButtonGroup variant="text" color='default' aria-label="text primary button group">
                     {buttonItems.map(item => (
-                        <Button key={item.id} href={item.path} onClick={() => history.push(item.path)}>
+                        <Button key={item.id} onClick={() => history.push(item.path)}>
                             {item.text}
                         </Button>
                     ))}
