@@ -23,7 +23,7 @@ const theme = createTheme({
   },
   typography: {
     useNextVariants: true,
-    fontFamily: 'Quicksand',
+    fontFamily: 'Poppins',
     fontWeightLight: 400,
     fontWeightRegular: 400,
     fontWeightMedium: 400,
