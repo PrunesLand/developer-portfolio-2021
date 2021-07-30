@@ -21,12 +21,16 @@ const storyStyles = makeStyles((theme) => {
         },
         title: {
             padding: theme.spacing(2),
-            fontSize: theme.typography.h3.fontSize,
-            margin: 'auto'
+            fontSize: theme.typography.h4.fontSize,
+            margin: 'auto',
+            [theme.breakpoints.up('sm')]: {
+                fontSize: theme.typography.h3.fontSize,
+            }
         },
         content: {
             fontSize: theme.typography.body1.fontSize,
-            padding: theme.spacing(1)
+            padding: theme.spacing(1),
+
         },
         paper: {
             padding: theme.spacing(1),
