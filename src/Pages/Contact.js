@@ -67,7 +67,7 @@ const Contact = () => {
                     <Paper
                         className={classes.paper}
                     >
-                        <Typography>I'm an active Github user. View more of my works at <a href="https://github.com/PrunesLand/developer-portfolio-2021">Github</a>.</Typography>
+                        <Typography>I'm an active Github user. View more of my works at <a href="https://github.com/PrunesLand">Github</a>.</Typography>
                         <img src="/github_ss.png" alt="Github Profile" className={classes.image} />
                     </Paper>
                 </div>
