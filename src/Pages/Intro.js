@@ -8,10 +8,10 @@ const introStyle = makeStyles((theme) => {
     return {
         root: {
             overflow: 'none',
-            height: '100vh',
+            height: '110vh',
             [theme.breakpoints.up('sm')]: {
                 height: '70vh'
-            }
+            },
         },
         section: {
             marginTop: theme.spacing(5),
@@ -81,7 +81,7 @@ const introStyle = makeStyles((theme) => {
             fontSize: theme.typography.h4.fontSize,
             [theme.breakpoints.up('md')]: {
                 fontSize: theme.typography.h2.fontSize
-            }
+            },
         },
         paperIcons: {
             width: theme.spacing(4),
@@ -104,6 +104,10 @@ const introStyle = makeStyles((theme) => {
             '&:hover': {
                 color: '#61dafb'
             }
+        },
+        paragraph: {
+            paddingTop: theme.spacing(0.5),
+            paddingLeft: theme.spacing(2)
         }
 
     }
@@ -173,9 +177,18 @@ export default function Intro() {
                     >
 
                         <Typography className={classes.title} > <a className={classes.react} href='https://reactjs.org/'>React</a> Developer</Typography>
-                        <Typography variant='h6'>Hi, I'm Pranaya.</Typography>
-                        <Typography variant='subtitle1'>I'm a enthusiastic developer with an interest in <a className={classes.react} href='https://reactjs.org/'>ReactJS</a>. </Typography>
-                        <Typography variant='subtitle1'>I'm experienced in various programming techniques and tools used in <a className={classes.react} href='https://reactjs.org/'>React</a> Development.</Typography>
+                        <Typography
+                            variant='h6'
+                            className={classes.paragraph}
+                        >Hi, I'm Pranaya.</Typography>
+                        <Typography
+                            variant='subtitle1'
+                            className={classes.paragraph}
+                        >I'm a enthusiastic developer with an interest in <a className={classes.react} href='https://reactjs.org/'>ReactJS</a>. </Typography>
+                        <Typography
+                            variant='subtitle1'
+                            className={classes.paragraph}
+                        >I'm experienced in various programming techniques and tools used in <a className={classes.react} href='https://reactjs.org/'>React</a> Development.</Typography>
                         <div className={classes.icons}>
                             {contactIcons.map(item => (
                                 <div
