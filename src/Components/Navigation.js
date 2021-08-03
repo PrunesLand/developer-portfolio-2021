@@ -88,11 +88,13 @@ const navStyle = makeStyles((theme) => {
             display: 'block',
             [theme.breakpoints.up('sm')]: {
                 display: 'none'
-            }
+            },
+
         },
         menu: {
             fontSize: '2rem',
-            cursor: 'pointer'
+            cursor: 'pointer',
+            color: theme.palette.text.secondary
         },
         footer: {
             background: theme.palette.primary.main,

@@ -71,9 +71,7 @@ const expStyles = makeStyles((theme) => {
             [theme.breakpoints.down('sm')]: {
                 flexDirection: 'column'
             },
-            "&:hover": {
-                background: theme.palette.primary.dark
-            }
+
         },
         eduIcon: {
             width: theme.spacing(15),
