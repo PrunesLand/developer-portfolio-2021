@@ -6,3 +6,5 @@ The tools that made it possible to create this portfolio are:
 - React Library
 - Material UI
 - Netlify
+
+Status of project: ***Finished***
