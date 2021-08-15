@@ -53,7 +53,10 @@ export default function BasicButtonGroup() {
         <div className={classes.root}>
             <ButtonGroup variant="text" className={classes.text} aria-label="text primary button group">
                 {buttonItems.map(item => (
-                    <Button key={item.id} href={item.path} className={classes.text} onClick={() => history.push(item.path)}>
+                    <Button key={item.id} href={item.path} className={classes.text} onClick={() => {
+                        history.push(item.path)
+                        window.scrollTo(0, 0)
+                    }}>
                         {item.text}
                     </Button>
                 ))}

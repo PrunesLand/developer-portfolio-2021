@@ -55,6 +55,12 @@ export const introStyle = makeStyles((theme) => {
                 width: '80vw'
             }
         },
+        icons: {
+            display: 'flex',
+            flexDirection: 'row',
+            padding: theme.spacing(2)
+
+        },
         iconItem: {
             width: '4rem'
         },

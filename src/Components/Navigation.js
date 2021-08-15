@@ -283,6 +283,7 @@ export default function Navigation({ children }) {
                             <ListItemText primary={item.text} onClick={() => {
                                 history.push(item.path)
                                 toggleDrawer(anchor, false)
+                                window.scrollTo(0, 0)
                             }} />
                         </ListItem>
                     ))}
@@ -315,7 +316,10 @@ export default function Navigation({ children }) {
             <div className={classes.rootButton}>
                 <ButtonGroup variant="text" color='default' aria-label="text primary button group">
                     {buttonItems.map(item => (
-                        <Button key={item.id} onClick={() => history.push(item.path)}>
+                        <Button key={item.id} onClick={() => {
+                            history.push(item.path)
+                            window.scrollTo(0, 0)
+                        }}>
                             {item.text}
                         </Button>
                     ))}
@@ -371,6 +375,7 @@ export default function Navigation({ children }) {
                                     className={classes.listText}
                                     onClick={() => {
                                         history.push('/')
+                                        window.scrollTo(0, 0)
                                     }}
                                 >
                                     About me
@@ -383,6 +388,7 @@ export default function Navigation({ children }) {
                                     className={classes.listText}
                                     onClick={() => {
                                         history.push('/story')
+                                        window.scrollTo(0, 0)
                                     }}
                                 >
                                     My Story
@@ -395,6 +401,7 @@ export default function Navigation({ children }) {
                                     className={classes.listText}
                                     onClick={() => {
                                         history.push('/experience')
+                                        window.scrollTo(0, 0)
                                     }}
                                 >
                                     Experience
@@ -407,6 +414,7 @@ export default function Navigation({ children }) {
                                     className={classes.listText}
                                     onClick={() => {
                                         history.push('/contact')
+                                        window.scrollTo(0, 0)
                                     }}
                                 >
                                     Contact
