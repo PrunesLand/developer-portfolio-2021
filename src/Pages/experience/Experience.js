@@ -1,70 +1,12 @@
 import { Avatar, Typography } from '@material-ui/core'
 import React from 'react'
-import { SiJavascript, SiHtml5, SiCss3, SiReact, SiMaterialUi, SiNetlify } from 'react-icons/si'
-import { GrMysql } from 'react-icons/gr'
-import { DiGit } from 'react-icons/di'
 import Paper from '@material-ui/core/Paper';
-import { blue, cyan, orange, red, yellow } from '@material-ui/core/colors'
 import { expStyles } from './styles'
+import { icons } from './icons'
 
 const Experience = () => {
 
     const classes = expStyles()
-
-    const icons = [
-        {
-            id: 1,
-            icon: <SiJavascript className={classes.icon} color={yellow[500]} />,
-            title: 'Javascript',
-            category: 'Language'
-        },
-        {
-            id: 2,
-            icon: <SiHtml5 className={classes.icon} color={red[700]} />,
-            title: 'HTML',
-            category: 'Language'
-        },
-        {
-            id: 3,
-            icon: <SiCss3 className={classes.icon} color={blue[500]} />,
-            title: 'CSS',
-            category: 'Language'
-        },
-        {
-            id: 4,
-            icon: <DiGit className={classes.icon} color={orange[900]} />,
-            title: 'Git version control',
-            category: 'Version control'
-        },
-        {
-            id: 5,
-            icon: <SiReact className={classes.icon} color={blue[300]} />,
-            title: 'React',
-            category: 'Library'
-
-        },
-        {
-            id: 6,
-            icon: <SiMaterialUi className={classes.icon} color={blue[900]} />,
-            title: 'Material UI',
-            category: 'Framework'
-        },
-        {
-            id: 7,
-            icon: <SiNetlify className={classes.icon} color={cyan[500]} />,
-            title: 'Netlify',
-            category: 'Deployment'
-        },
-        {
-            id: 8,
-            icon: <GrMysql className={classes.icon} color={blue[900]} />,
-            title: 'SQL',
-            category: 'Language'
-        },
-
-    ]
-
-
 
     return (
         <div

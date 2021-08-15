@@ -66,7 +66,7 @@ export default function Intro() {
                         className={classes.container}
                     >
 
-                        <Typography className={classes.title} > Front End Developer</Typography>
+                        <Typography className={classes.title} > Web Developer</Typography>
                         <Typography
                             variant='h6'
                             className={classes.paragraph}
@@ -74,11 +74,11 @@ export default function Intro() {
                         <Typography
                             variant='subtitle1'
                             className={classes.paragraph}
-                        >I'm a enthusiastic developer with an interest in <a className={classes.react} href='https://reactjs.org/'>ReactJS</a>. </Typography>
+                        >I'm a enthusiastic developer with an interest in <a className={classes.react} href='https://www.javascript.com/'>Javascript</a>. </Typography>
                         <Typography
                             variant='subtitle1'
                             className={classes.paragraph}
-                        >I'm experienced in various programming techniques and tools used in Front End Development.</Typography>
+                        >I'm experienced in various programming techniques and tools used in Web Development.</Typography>
                         <div className={classes.icons}>
                             {contactIcons.map(item => (
                                 <div

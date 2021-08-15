@@ -55,12 +55,6 @@ export const introStyle = makeStyles((theme) => {
                 width: '80vw'
             }
         },
-        icons: {
-            display: 'flex',
-            flexDirection: 'row',
-            padding: theme.spacing(2)
-
-        },
         iconItem: {
             width: '4rem'
         },
@@ -98,7 +92,7 @@ export const introStyle = makeStyles((theme) => {
                 color: '#000'
             },
             '&:hover': {
-                color: '#61dafb'
+                color: '#fcdc00'
             }
         },
         paragraph: {
