@@ -12,7 +12,7 @@ export const contactPage = makeStyles((theme) => {
         container: {
             display: 'flex',
             flexDirection: 'column',
-            justifyContent: 'center',
+            alignItems: 'center',
             textAlign: 'center'
         },
         title: {
@@ -24,16 +24,17 @@ export const contactPage = makeStyles((theme) => {
         },
         paper: {
             padding: theme.spacing(2.5),
-            margin: 'auto',
-            [theme.breakpoints.up('sm')]: {
-                width: '50vw'
-            },
-            width: '50vw',
-            background: theme.palette.primary.main
+            margin: theme.spacing(2),
 
-        },
-        paperWrapper: {
-            padding: theme.spacing(1)
+            [theme.breakpoints.down('sm')]: {
+                width: '90vw',
+                maxWidth: theme.spacing(30)
+
+            },
+            width: '90vh',
+            maxWidth: theme.spacing(60),
+            background: theme.palette.primary.main,
+
         },
         image: {
             display: 'none',
