@@ -1,5 +1,5 @@
 import React from 'react'
-import { style } from '../navigation/styles'
+import { style } from './navigation/styles'
 import { BsInfoCircle } from 'react-icons/bs';
 import Modal from '@material-ui/core/Modal';
 import Backdrop from '@material-ui/core/Backdrop';
