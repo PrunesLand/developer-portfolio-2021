@@ -1,10 +1,10 @@
 import { createTheme, ThemeProvider } from "@material-ui/core";
-import Navigation from "./Components/Navigation";
 import Intro from "./Pages/intro/Intro";
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import Story from './Pages/story/Story'
 import Experience from './Pages/experience/Experience'
 import Contact from './Pages/contact/Contact'
+import Navigation from "./Components/navigation/Navigation";
 
 const theme = createTheme({
   palette: {
