@@ -47,6 +47,12 @@ export default function BasicButtonGroup() {
             path: '/contact',
             message: 'Contact clicked'
         },
+        {
+            id: 5,
+            text: 'Projects',
+            path: '/project',
+            message: 'Project clicked'
+        },
     ]
 
     return (

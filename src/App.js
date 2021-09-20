@@ -5,6 +5,7 @@ import Story from './Pages/story/Story'
 import Experience from './Pages/experience/Experience'
 import Contact from './Pages/contact/Contact'
 import Navigation from "./Components/navigation/Navigation";
+import Projects from "./Pages/projects/Projects";
 
 const theme = createTheme({
   palette: {
@@ -48,6 +49,9 @@ function App() {
             </Route>
             <Route path="/contact">
               <Contact />
+            </Route>
+            <Route path="/project">
+              <Projects />
             </Route>
           </Switch>
         </Navigation>
