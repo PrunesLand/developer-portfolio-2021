@@ -3,10 +3,11 @@ import { makeStyles } from "@material-ui/core"
 export const styles = makeStyles((theme) => {
     return {
         root: {
-            height: '140vh',
+            height: '145vh',
             [theme.breakpoints.up('sm')]: {
                 height: '70vh'
             },
+            fontFamily: theme.typography.fontFamily
         },
         container: {
 
@@ -20,8 +21,12 @@ export const styles = makeStyles((theme) => {
             },
         },
         title: {
-            padding: theme.spacing(3),
-            // color: '#999'
+            fontSize: theme.typography.h5.fontSize,
+            padding: theme.spacing(2),
+            fontFamily: theme.typography.fontFamily,
+            [theme.breakpoints.up('sm')]: {
+                fontSize: theme.typography.h4.fontSize
+            }
 
         }
     }

@@ -17,11 +17,11 @@ export default function ProjectCard({ title, description, link, image }) {
                 <CardActionArea href={link} target='_blank' className={classes.container}>
                     <CardMedia
                         component="img"
-                        height="120"
+                        height="145"
                         image={image}
                         alt={title}
                     />
-                    <CardContent>
+                    <CardContent className={classes.content}>
                         <Typography gutterBottom variant="h5" className={classes.title}>
                             {title}
                         </Typography>
