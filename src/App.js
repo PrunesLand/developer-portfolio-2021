@@ -10,9 +10,9 @@ import Projects from "./Pages/projects/Projects";
 const theme = createTheme({
   palette: {
     primary: {
-      main: '#9fa8da',
-      light: '#d1d9ff',
-      dark: '#6f79a8'
+      main: '#90a4ae',
+      light: '#c1d5e0',
+      dark: '#62757f'
     },
     secondary: {
       main: '#9fc5da',

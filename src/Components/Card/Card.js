@@ -1,9 +1,9 @@
 import * as React from 'react';
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Typography from '@mui/material/Typography';
-import { CardActionArea } from '@mui/material';
+import Card from '@material-ui/core/Card';
+import CardContent from '@material-ui/core/CardContent';
+import CardMedia from '@material-ui/core/CardMedia';
+import { Typography } from '@material-ui/core';
+import CardActionArea from '@material-ui/core/CardActionArea';
 import { styles } from './styles';
 
 export default function ProjectCard({ title, description, link, image }) {
@@ -17,15 +17,15 @@ export default function ProjectCard({ title, description, link, image }) {
                 <CardActionArea href={link} target='_blank' className={classes.container}>
                     <CardMedia
                         component="img"
-                        height="145"
+                        height="160"
                         image={image}
                         alt={title}
                     />
                     <CardContent className={classes.content}>
-                        <Typography gutterBottom variant="h5" className={classes.title}>
+                        <Typography gutterBottom variant="h5" component="h2" className={classes.title}>
                             {title}
                         </Typography>
-                        <Typography variant="body2" color="text.secondary" className={classes.description}>
+                        <Typography variant="body2" color="textSecondary" component="p" className={classes.description}>
                             {description}
                         </Typography>
                     </CardContent>

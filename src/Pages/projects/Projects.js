@@ -1,4 +1,4 @@
-import { Typography } from '@mui/material'
+import { Typography } from '@material-ui/core'
 import React from 'react'
 import ProjectCard from '../../Components/Card/Card'
 import { projectList } from './projectList'
@@ -10,7 +10,7 @@ const Projects = () => {
 
     return (
         <div className={classes.root}>
-            <Typography className={classes.title} variant='h4' align='center' >My Projects</Typography>
+            <Typography className={classes.title} >My Projects</Typography>
             <main className={classes.container}>
                 {projectList.map(item => {
                     return (

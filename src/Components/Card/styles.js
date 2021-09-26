@@ -7,8 +7,11 @@ export const styles = makeStyles((theme) => {
             fontFamily: theme.typography.fontFamily
         },
         container: {
-            height: theme.spacing(34)
-
+            height: '80vw',
+            width: '40vh',
+            minWidth: theme.spacing(40),
+            minHeight: theme.spacing(40),
+            maxHeight: theme.spacing(40)
         },
         title: {
 
