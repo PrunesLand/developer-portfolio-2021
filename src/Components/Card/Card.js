@@ -14,7 +14,7 @@ export default function ProjectCard({ title, description, link, image }) {
         <div className={classes.root}>
 
             <Card sx={{ maxWidth: 300 }} >
-                <CardActionArea href={link} target='_blank' className={classes.container}>
+                <CardActionArea href={link} target='_blank' rel="noopener" className={classes.container}>
                     <CardMedia
                         component="img"
                         height="160"

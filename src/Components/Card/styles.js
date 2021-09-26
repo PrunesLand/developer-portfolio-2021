@@ -11,7 +11,8 @@ export const styles = makeStyles((theme) => {
             width: '40vh',
             minWidth: theme.spacing(40),
             minHeight: theme.spacing(40),
-            maxHeight: theme.spacing(40)
+            maxHeight: theme.spacing(40),
+
         },
         title: {
 
@@ -21,7 +22,10 @@ export const styles = makeStyles((theme) => {
         },
         content: {
             background: theme.palette.primary.main,
-            height: "100%"
+            height: "100%",
+            '&:hover': {
+                background: theme.palette.primary.dark
+            }
         }
     }
 })

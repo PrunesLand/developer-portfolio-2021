@@ -31,7 +31,7 @@ const Story = () => {
                     >What attracted me into becoming a web developer was the creative aspects that can be applied into coding. That coding is not just a way to solve a problem but also a means to express yourself. This way of coding is called generative art. </Typography>
                     <Typography
                         className={classes.content}
-                    >If you'd like to learn more about generative art, check out this <a href="https://www.freecodecamp.org/news/an-introduction-to-generative-art-what-it-is-and-how-you-make-it-b0b363b50a70/">article</a> to find out more.</Typography>
+                    >If you'd like to learn more about generative art, check out this <a rel="noopener" href="https://www.freecodecamp.org/news/an-introduction-to-generative-art-what-it-is-and-how-you-make-it-b0b363b50a70/">article</a> to find out more.</Typography>
                 </Paper>
             </div>
         </div>

@@ -83,10 +83,7 @@ export const style = makeStyles((theme) => {
         },
         footer: {
             background: theme.palette.primary.main,
-            height: '25vh',
-            [theme.breakpoints.up('md')]: {
-                height: '30vh'
-            }
+            height: '30vh',
 
         },
         fContainer: {
@@ -147,7 +144,10 @@ export const style = makeStyles((theme) => {
             fontSize: theme.spacing(1.8),
             textAlign: 'center',
             color: theme.palette.text.secondary,
-            paddingTop: theme.spacing(3)
+
+            [theme.breakpoints.down('sm')]: {
+                paddingTop: '8vh',
+            }
         },
         buttonText: {
             color: theme.palette.text.secondary

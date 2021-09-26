@@ -31,12 +31,12 @@ export default function Intro() {
     const contactIcons = [
         {
             id: 1,
-            icon: <FaGithub className={classes.github} onClick={() => window.open('https://github.com/PrunesLand')} />,
+            icon: <FaGithub rel="noopener" className={classes.github} onClick={() => window.open('https://github.com/PrunesLand')} />,
 
         },
         {
             id: 2,
-            icon: <FaLinkedin className={classes.linkedin} onClick={() => window.open('https://www.linkedin.com/in/pranaya-anargya-22b585195/')} />,
+            icon: <FaLinkedin rel="noopener" className={classes.linkedin} onClick={() => window.open('https://www.linkedin.com/in/pranaya-anargya-22b585195/')} />,
 
         },
         {

@@ -24,6 +24,7 @@ const Footer = () => {
                             return (
                                 <li
                                     className={classes.listItem}
+                                    key={item.id}
                                 >
                                     <Typography
                                         className={classes.listText}
