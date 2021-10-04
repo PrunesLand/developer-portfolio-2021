@@ -6,7 +6,7 @@ export const introStyle = makeStyles((theme) => {
             overflow: 'none',
             height: '110vh',
             [theme.breakpoints.up('sm')]: {
-                height: '70vh'
+                height: '75vh'
             },
         },
         section: {

@@ -5,7 +5,7 @@ export const styles = makeStyles((theme) => {
         root: {
             height: '170vh',
             [theme.breakpoints.up('sm')]: {
-                height: '70vh'
+                height: '80vh'
             },
             fontFamily: theme.typography.fontFamily
         },
