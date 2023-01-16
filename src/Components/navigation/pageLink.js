@@ -6,12 +6,6 @@ export const buttonItems = [
         message: 'About me clicked'
     },
     {
-        id: 2,
-        text: 'My Story',
-        path: '/story',
-        message: 'My story clicked'
-    },
-    {
         id: 3,
         text: 'Projects',
         path: '/project',
